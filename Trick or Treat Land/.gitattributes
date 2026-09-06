@@ -1,0 +1,42 @@
+# Force LF for all text files
+* text=auto eol=lf
+
+# C# scripts
+*.cs     text diff=csharp
+
+# Unity shader and compute files
+*.shader  text
+*.cginc   text
+*.hlsl    text
+*.compute text
+
+# Unity UI files
+*.uxml    text
+*.uss     text
+
+# Config and data files
+*.json    text
+*.xml     text
+*.yml     text
+*.yaml    text
+*.txt     text
+
+# Image and binary files (don’t convert line endings!)
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.psd     binary
+*.tga     binary
+*.fbx     binary
+*.prefab  binary
+*.unity   binary
+*.anim    binary
+*.asset   binary
+
+# Audio/video
+*.mp3     binary
+*.wav     binary
+*.ogg     binary
+*.mp4     binary
+*.mov     binary

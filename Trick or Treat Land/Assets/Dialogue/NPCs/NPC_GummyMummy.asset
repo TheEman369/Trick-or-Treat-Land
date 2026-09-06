@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64bd2b932c522242b8b81bcbb57c14f, type: 3}
+  m_Name: NPC_GummyMummy
+  m_EditorClassIdentifier: 
+  id: 5
+  displayName: Gummy Mummy
+  defaultPortrait: {fileID: 0}
+  theme: {fileID: 0}
+  scenes:
+  - sceneId: intro
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: "Wrapped up again\u2026 talk about a sticky situation! I\u2019ve been
+        guarding sweets for a thousand years\u2014guess I\u2019m really preserved.
+        My jokes might be ancient, but at least they don\u2019t fall apart like my
+        bandages. So unwrap this riddle of sugar and fright\u2014Trick or Treat?"
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 1
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: trick_roll
+    nextOnChoiceB: treat_roll
+    requiresRoll: 0
+    rollDC: 12
+    nextOnSuccess: 
+    nextOnFail: 
+    effect: 0
+    effectValue: 0
+    effectNote: 
+  - sceneId: trick_roll
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: Bandage trial!
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 0
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: 
+    nextOnChoiceB: 
+    requiresRoll: 1
+    rollDC: 12
+    nextOnSuccess: trick_success
+    nextOnFail: trick_fail
+    effect: 0
+    effectValue: 0
+    effectNote: 
+  - sceneId: trick_success
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: "Gummy wraps tie you tight. \u201CLooks like you\u2019ve been preserved
+        for later!\u201D"
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 0
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: 
+    nextOnChoiceB: 
+    requiresRoll: 0
+    rollDC: 12
+    nextOnSuccess: 
+    nextOnFail: 
+    effect: 1
+    effectValue: -2
+    effectNote: Move back 2
+  - sceneId: trick_fail
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: "The wraps spring you forward. \u201CYou\u2019ve been unwrapped to victory!\u201D"
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 0
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: 
+    nextOnChoiceB: 
+    requiresRoll: 0
+    rollDC: 12
+    nextOnSuccess: 
+    nextOnFail: 
+    effect: 1
+    effectValue: 2
+    effectNote: Move forward 2
+  - sceneId: treat_roll
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: Do you deserve this gummy gem?
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 0
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: 
+    nextOnChoiceB: 
+    requiresRoll: 1
+    rollDC: 12
+    nextOnSuccess: treat_success
+    nextOnFail: treat_fail
+    effect: 0
+    effectValue: 0
+    effectNote: 
+  - sceneId: treat_success
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: "You unwrap a gummy gem. \u201CAn ancient chew-reasure!\u201D"
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 0
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: 
+    nextOnChoiceB: 
+    requiresRoll: 0
+    rollDC: 12
+    nextOnSuccess: 
+    nextOnFail: 
+    effect: 2
+    effectValue: 1
+    effectNote: Gain bonus candy
+  - sceneId: treat_fail
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: "The gem turns into sticky sludge. \u201CThat\u2019s a mummy\u2019s curse
+        for you.\u201D"
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 0
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: 
+    nextOnChoiceB: 
+    requiresRoll: 0
+    rollDC: 12
+    nextOnSuccess: 
+    nextOnFail: 
+    effect: 3
+    effectValue: 1
+    effectNote: Lose a turn
