@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64bd2b932c522242b8b81bcbb57c14f, type: 3}
+  m_Name: NPC_LicoriceWitch
+  m_EditorClassIdentifier: 
+  id: 4
+  displayName: Licorice Witch
+  defaultPortrait: {fileID: 0}
+  theme: {fileID: 0}
+  scenes:
+  - sceneId: intro
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: "Cackle, cackle! My cauldron bubbles with red twists and black swirls.
+        I tried to make a potion of invisibility\u2026 but it turned out to be licorice!
+        Ha! Don\u2019t worry, my rhymes are twisted, but my humor is even stickier.
+        Come closer, traveler, and pick your fate\u2014Trick or Treat?"
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 1
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: trick_roll
+    nextOnChoiceB: treat_roll
+    requiresRoll: 0
+    rollDC: 12
+    nextOnSuccess: 
+    nextOnFail: 
+    effect: 0
+    effectValue: 0
+    effectNote: 
+  - sceneId: trick_roll
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: "Tangled or lucky? Let\u2019s see."
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 0
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: 
+    nextOnChoiceB: 
+    requiresRoll: 1
+    rollDC: 12
+    nextOnSuccess: trick_success
+    nextOnFail: trick_fail
+    effect: 0
+    effectValue: 0
+    effectNote: 
+  - sceneId: trick_success
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: "Licorice tangles your feet. \u201CHa! You\u2019ve been twisted up in
+        knots.\u201D"
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 0
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: 
+    nextOnChoiceB: 
+    requiresRoll: 0
+    rollDC: 12
+    nextOnSuccess: 
+    nextOnFail: 
+    effect: 3
+    effectValue: 1
+    effectNote: Lose 1 turn
+  - sceneId: trick_fail
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: "The licorice untangles into a rope. \u201CLooks like you pulled the
+        sweet end of the stick!\u201D"
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 0
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: 
+    nextOnChoiceB: 
+    requiresRoll: 0
+    rollDC: 12
+    nextOnSuccess: 
+    nextOnFail: 
+    effect: 1
+    effectValue: 2
+    effectNote: Move forward 2
+  - sceneId: treat_roll
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: "Hop on my broom\u2014if it holds\u2026"
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 0
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: 
+    nextOnChoiceB: 
+    requiresRoll: 1
+    rollDC: 12
+    nextOnSuccess: treat_success
+    nextOnFail: treat_fail
+    effect: 0
+    effectValue: 0
+    effectNote: 
+  - sceneId: treat_success
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: "Her licorice broomstick zooms you ahead. \u201CThat\u2019s what I call
+        a sweet ride!\u201D"
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 0
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: 
+    nextOnChoiceB: 
+    requiresRoll: 0
+    rollDC: 12
+    nextOnSuccess: 
+    nextOnFail: 
+    effect: 1
+    effectValue: 3
+    effectNote: Move forward 3
+  - sceneId: treat_fail
+    portraitOverride: {fileID: 0}
+    lines:
+    - text: "The broomstick snaps in half. \u201CGuess it wasn\u2019t built to last
+        a-licorice.\u201D"
+      voice: {fileID: 0}
+      autoAdvanceAfter: 0
+    hasChoice: 0
+    choiceA: Trick
+    choiceB: Treat
+    nextOnChoiceA: 
+    nextOnChoiceB: 
+    requiresRoll: 0
+    rollDC: 12
+    nextOnSuccess: 
+    nextOnFail: 
+    effect: 6
+    effectValue: 0
+    effectNote: Stay in place
